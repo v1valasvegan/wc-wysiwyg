@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Webpack App</title>
+  </head>
+  <body>
+    <h2>this is that!!!</h2>
+    <wc-wysiwyg
+      id="wc-demo-comment"
+      data-allow-tags="strong,u,i,b,q,blockquote,a,img,pre"
+      data-storage="demo-comment"
+      data-hide-bottom-actions="1"
+      is="wc-wysiwyg"
+      required
+      minlength="5"
+      maxlength="500"
+    >
+      <textarea>your comment</textarea>
+    </wc-wysiwyg>
+  </body>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker
+          .register('service-worker.js')
+          .then((registration) => {
+            console.log('Service Worker registered: ', registration);
+          })
+          .catch((registrationError) => {
+            console.error(
+              'Service Worker registration failed: ',
+              registrationError
+            );
+          });
+      });
+    }
+  </script>
+</html>

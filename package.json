@@ -1,41 +1,55 @@
 {
-    "name": "@webislife/wc-wysiwyg",
-    "version": "1.0.1",
-    "description": "WYWSIWYG HTML5 Editor written in ts and designed by web-componennt, support all JS frameworks and browsers",
-    "main": "dist/wc-wysiwyg.js",
-    "type": "module",
-    "scripts": {
-      "sass": "./node_modules/node-sass/bin/node-sass ./src -o ./dist",
-      "tsc": "./node_modules/.bin/tsc",
-      "babel-minify": " ./node_modules/.bin/minify ./dist --mangle=false --out-dir ./dist --sourceType=module",
-      "build": "npm run sass && npm run tsc && npm run babel-minify"
-    },
-    "repository": {
-      "type": "git",
-      "url": "git+https://github.com/webislife/wc-wysiwyg.git"
-    },
-    "keywords": [
-      "web-component",
-      "custom-element",
-      "html5 editor",
-      "wysiwyg",
-      "html5",
-      "esnext",
-      "typescript"
-    ],
-    "author": "srokoff",
-    "license": "MIT",
-    "bugs": {
-      "url": "https://github.com/webislife/wc-wysiwyg/issues"
-    },
-    "homepage": "https://github.com/webislife/wc-wysiwyg#readme",
-    "devDependencies": {
-      "babel-minify": "^0.5.2",
-      "node-sass": "^8.0.0",
-      "typescript": "^4.9.4"
-    },
-    "publishConfig": {
-      "@webislife:registry": "https://npm.pkg.github.com"
-    }
+  "name": "my-webpack-project",
+  "version": "1.0.0",
+  "description": "My webpack project",
+  "main": "dist/wc-wysiwyg.js",
+  "scripts": {
+    "sass": "./node_modules/node-sass/bin/node-sass ./src -o ./dist",
+    "tsc": "./node_modules/.bin/tsc",
+    "babel-minify": " ./node_modules/.bin/minify ./dist --mangle=false --out-dir ./dist --sourceType=module",
+    "build": "webpack --mode=production --node-env=production",
+    "build:dev": "webpack --mode=development",
+    "build:prod": "webpack --mode=production --node-env=production",
+    "watch": "webpack --watch",
+    "serve": "webpack serve",
+    "start": "npm run tsc && webpack serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webislife/wc-wysiwyg.git"
+  },
+  "keywords": [
+    "web-component",
+    "custom-element",
+    "html5 editor",
+    "wysiwyg",
+    "html5",
+    "esnext",
+    "typescript"
+  ],
+  "author": "srokoff",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/webislife/wc-wysiwyg/issues"
+  },
+  "homepage": "https://github.com/webislife/wc-wysiwyg#readme",
+  "devDependencies": {
+    "@babel/core": "^7.22.1",
+    "@babel/preset-env": "^7.22.2",
+    "@webpack-cli/generators": "^3.0.4",
+    "babel-loader": "^9.1.2",
+    "babel-minify": "^0.5.2",
+    "node-sass": "^8.0.0",
+    "typescript": "^4.9.4",
+    "webpack": "^5.84.1",
+    "webpack-cli": "^5.1.1",
+    "webpack-dev-server": "^4.15.0"
+  },
+  "dependencies": {
+    "css-loader": "^6.8.1",
+    "html-webpack-plugin": "^5.5.1",
+    "postcss-loader": "^7.3.2",
+    "style-loader": "^3.3.3",
+    "workbox-webpack-plugin": "^6.6.0"
   }
-  
+}
